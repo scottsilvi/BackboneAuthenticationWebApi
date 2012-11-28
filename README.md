@@ -9,9 +9,10 @@ Authentication Information
 By default, I'm using the localdb that is created by default when using the Microsoft Universal Providers. I then used the ASP.NET Web Configuration tool to quickly create a sample user to test.
 
 Credentials: 
-> Username: sample
-> Password: Sample1 
-> Role: "Customer"
+```Username: sample
+Password: Sample1 
+Role: "Customer"
+```
 
 The purpose of this app is to allow developers to secure Api endpoints with the [Authorize] attribute, regardless of if the request derives from a user-driven action on a web-front end, or via a raw API call by a 3rd party request.
 

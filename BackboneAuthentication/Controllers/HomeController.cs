@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace BackboneAuthentication.Controllers
 {
@@ -11,6 +12,11 @@ namespace BackboneAuthentication.Controllers
         public ActionResult Index()
         {
             return View();
+        }
+
+        public void Logout()
+        {
+            FormsAuthentication.SignOut();
         }
     }
 }

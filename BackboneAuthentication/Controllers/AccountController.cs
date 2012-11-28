@@ -11,13 +11,6 @@ namespace BackboneAuthentication.Controllers
 {
     public class AccountController : ApiController
     {
-        // GET api/values
-        [Authorize]
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
-
         // POST api/account
         public bool Post(LoginModel model)
         {

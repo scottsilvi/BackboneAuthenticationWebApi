@@ -8,7 +8,8 @@ $(function () {
         el: $("#loginForm"),
 
         events: {
-            "click #login": "login"
+            "click #login": "login",
+            "click #logout": "logout"
         },
 
         initialize: function () {
@@ -25,7 +26,15 @@ $(function () {
                 self.model.set({ password: $(e.currentTarget).val() });
             });
         },
-
+        logout: function () {
+            console.log('Logout Clicked');
+            var logout = $.ajax({
+                url: "home/logout",
+                dataType: "json"
+            }).always(function (data) {
+                console.log("Logged Out");
+            });
+        },
         login: function (e) {
             e.preventDefault();
             var user = this.model.get('username');

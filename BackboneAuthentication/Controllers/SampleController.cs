@@ -13,6 +13,8 @@ namespace BackboneAuthentication.Controllers
     {
         CustomerRepository cr = new CustomerRepository();
         // GET api/values
+
+        [Authorize]
         public IEnumerable<Customer> Get()
         {
             return cr.GetAll();

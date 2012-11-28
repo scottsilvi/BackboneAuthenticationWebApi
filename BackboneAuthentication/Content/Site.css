@@ -1,0 +1,9 @@
+﻿ul {
+    list-style-type: none;
+}
+legend {
+    display: none;
+}
+fieldset {
+    border: none;
+}

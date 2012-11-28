@@ -1,7 +1,7 @@
 ﻿
 $(function () {
     var Credentials = Backbone.Model.extend({
-        url: "/api/account"
+        urlRoot: "/api/account"
     });
 
     var LoginView = Backbone.View.extend({
@@ -18,11 +18,11 @@ $(function () {
             this.username = $("#username");
             this.password = $("#password");
 
-            this.username.change(function (e) {
+            this.username.on('change',function (e) {
                 self.model.set({ username: $(e.currentTarget).val() });
             });
 
-            this.password.change(function (e) {
+            this.password.on('change',function (e) {
                 self.model.set({ password: $(e.currentTarget).val() });
             });
         },
@@ -47,7 +47,7 @@ $(function () {
     });
 
     var GetModel = Backbone.Model.extend({
-        url: "/api/sample"
+        urlRoot: "/api/sample"
     });
     var GetView = Backbone.View.extend({
         el: $("#getButton"),
@@ -58,10 +58,16 @@ $(function () {
 
         initialize: function () {
             var self = this;
+            this.id = $("#id");
+            this.id.on('change', function (e) {
+                self.model.set({ id: $(e.currentTarget).val() });
+            });
         },
 
         get: function () {
+
             this.model.fetch({
+                id: this.model.get('id'),
                 success: function (data) { console.log(data); }
             });
         }

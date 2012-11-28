@@ -14,11 +14,16 @@ namespace BackboneAuthentication.Controllers
         CustomerRepository cr = new CustomerRepository();
         // GET api/values
 
-        [Authorize]
+        [Authorize(Roles="Administrator")]
         public IEnumerable<Customer> Get()
         {
             return cr.GetAll();
         }
 
+        [Authorize(Roles = "Customer, Administrator")]
+        public Customer Get(int id)
+        {
+            return cr.Get(id);
+        }
     }
 }

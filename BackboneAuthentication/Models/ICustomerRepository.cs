@@ -8,5 +8,6 @@ namespace BackboneAuthentication.Models
     public interface ICustomerRepository
     {
         List<Customer> GetAll();
+        Customer Get(int id);
     }
 }

@@ -9,7 +9,8 @@ Authentication Information
 By default, I'm using the localdb that is created by default when using the Microsoft Universal Providers. I then used the ASP.NET Web Configuration tool to quickly create a sample user to test.
 
 Credentials: 
-```Username: sample
+```
+Username: sample
 Password: Sample1 
 Role: "Customer"
 ```
